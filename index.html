@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ldb</title>
+  <title>dez</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -11,9 +11,11 @@
 
 
   <!-- Adicionar um favicon -->
-  <link rel="icon" type="image/png" href="https://storage.googleapis.com/filtrify-public-assets/filtripage/others/padlock.png">
+  <link rel="icon" type="image/png"
+    href="https://storage.googleapis.com/filtrify-public-assets/filtripage/others/padlock.png">
   <!-- Para compatibilidade com navegadores mais antigos -->
-  <link rel="shortcut icon" href="https://storage.googleapis.com/filtrify-public-assets/filtripage/others/padlock.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://storage.googleapis.com/filtrify-public-assets/filtripage/others/padlock.ico"
+    type="image/x-icon">
   <style>
     * {
       margin: 0;
@@ -130,9 +132,16 @@
       }
     }
   </style>
-  <!-- Start Filtripixel tracking (filtripixel.minify.js) -->
-  <!-- Place at the end of the head and before the </head> tag -->
-  <!-- End Filtripixel tracking (filtripixel.minify.js) -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-XXXXXXX'); // substitua pelo seu ID do Google Ads
+  </script>
+
+
 </head>
 
 <body>
@@ -143,25 +152,29 @@
   <span style="display: none;">
     This website uses cookies to improve the user experience. By continuing to browse, you agree to the use of cookies.
   </span>
-  <a href="https://oficialdezpila.site">
+  <a href="https://cursodeingles.tfcleaning.com/inicio" onclick="dispararConversao()">
     <div id="modal-container" class="modal-container">
-      <img id="modal-image-desktop" src="https://storage.googleapis.com/filtrify-public-assets/filtripage/presellTypes/pt/cookies_pt_desktop.png" alt="ldb" class="modal-image-desktop">
-      <img id="modal-image-mobile" src="https://storage.googleapis.com/filtrify-public-assets/filtripage/presellTypes/pt/cookies_pt_mobile.png" alt="ldb" class="modal-image-mobile">
+      <img id="modal-image-desktop"
+        src="https://storage.googleapis.com/filtrify-public-assets/filtripage/presellTypes/pt/cookies_pt_desktop.png"
+        alt="ldb" class="modal-image-desktop">
+      <img id="modal-image-mobile"
+        src="https://storage.googleapis.com/filtrify-public-assets/filtripage/presellTypes/pt/cookies_pt_mobile.png"
+        alt="ldb" class="modal-image-mobile">
     </div>
   </a>
 
 
 
   <script>
-    (function() {
+    (function () {
       const currentParams = window.location.search;
-      if (!currentParams) return; // Se não houver parâmetros, não faz nada
+      if (!currentParams) return; 
 
       const links = document.querySelectorAll('a[href]');
       links.forEach(link => {
         const href = link.getAttribute('href');
 
-        // Ignora links que são âncoras ou javascript:void(0)
+      
         if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
 
         try {
@@ -169,7 +182,6 @@
           const linkParams = new URLSearchParams(url.search);
           const currentUrlParams = new URLSearchParams(currentParams);
 
-          // Adiciona os parâmetros da URL atual, sem sobrescrever os que já existem
           currentUrlParams.forEach((value, key) => {
             if (!linkParams.has(key)) {
               linkParams.set(key, value);
@@ -185,6 +197,17 @@
       });
     })();
   </script>
+
+
+  <script>
+    function dispararConversao() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-XXXXXXX/AAAAAA-BBB' // substitua pelo ID do Google Ads e pela tag de conversão
+      });
+      console.log("Conversão disparada para o Google Ads!");
+    }
+  </script>
+
 </body>
 
 </html>
